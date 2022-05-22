@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import utilities.Driver;
 
@@ -18,7 +19,7 @@ public class _01_AppleTest extends Base {
     }
 
     // 2. Validation of test - test
-    @Test
+    @Test (priority = 1)
     public void testAppleTitle(){
         driver.get("https://www.apple.com/");
 
@@ -34,7 +35,7 @@ public class _01_AppleTest extends Base {
 
 
 
-    @Test
+    @Test(priority = 2)
     public void testAppleUrl(){
         driver.get("https://www.apple.com/");
         String expectedUrl = "https://www.apple.com/"; // requirement
@@ -43,13 +44,13 @@ public class _01_AppleTest extends Base {
         Assert.assertEquals(actualUrl, expectedUrl);
 
     }
-
-    @Test
-    public void X(){
-        //fail() method is used to fail a test on purpose
-        // we use this for known issues
-        Assert.fail("Failure on purpose");
-    }
+  //  @Ignore // or (enabled=false)
+//    @Test (priority = 3)
+//    public void X(){
+//        //fail() method is used to fail a test on purpose
+//        // we use this for known issues
+//        Assert.fail("Failure on purpose");
+//    }
 
      @AfterMethod
     // 3. Teardown actions - after each test

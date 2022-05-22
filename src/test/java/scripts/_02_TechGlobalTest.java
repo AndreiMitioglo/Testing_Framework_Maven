@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import utilities.Driver;
 
@@ -25,7 +26,7 @@ public class _02_TechGlobalTest {
     }
 
     // 2. Validation of test - test
-    @Test
+    @Test(priority = 1, description = "TC123: Validate Application form heading")
     public void testAplicationFromHeading(){
         driver.get("https://www.techglobalschool.com/apply-now");
 
@@ -48,5 +49,6 @@ public class _02_TechGlobalTest {
     }
 
 }
+
 
 
