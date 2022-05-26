@@ -9,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
+import pages.TGApplicationPage;
 import utilities.Driver;
 
     /*
@@ -16,7 +17,7 @@ import utilities.Driver;
     2. Validate the heading1 is displayed and the text for it is ="Application Form"
  */
 
-public class _02_TechGlobalTest {
+public class _02_TechGlobalTest extends  Base{
     WebDriver driver;
     //1. Set up driver
 
@@ -30,13 +31,12 @@ public class _02_TechGlobalTest {
     public void testAplicationFromHeading(){
         driver.get("https://www.techglobalschool.com/apply-now");
 
-        WebElement heading1= driver.findElement(By.xpath("//span[text()='Application Form']"));
-
-        System.out.println(heading1.getText());
+//        WebElement heading1;
+//        System.out.println(heading1.getText());
         String expectedHeading1 = "Application Form"; // requirement
-        String actualHeading1 = heading1.getText(); // development
+        String actualHeading1 = tgApplicationPage.heading1.getText(); // development
 
-        Assert.assertTrue(heading1.isDisplayed());
+        Assert.assertTrue(tgApplicationPage.heading1.isDisplayed());
         Assert.assertEquals(actualHeading1, expectedHeading1);
 
 
