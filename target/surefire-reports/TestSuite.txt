@@ -1,8 +1,32 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 41.946 sec <<< FAILURE!
-testApplicationFormHeading(scripts._02_TechGlobalTest)  Time elapsed: 0.004 sec  <<< FAILURE!
-java.lang.NullPointerException
-	at scripts._02_TechGlobalTest.testApplicationFormHeading(_02_TechGlobalTest.java:29)
+Tests run: 9, Failures: 3, Errors: 0, Skipped: 3, Time elapsed: 93.928 sec <<< FAILURE! - in TestSuite
+testMainHeader(scripts._03_EtsyTest)  Time elapsed: 1.252 sec  <<< FAILURE!
+java.lang.AssertionError: expected [Father's Day Gifts] but found [Shop Home Sales!]
+	at scripts._03_EtsyTest.testMainHeader(_03_EtsyTest.java:100)
+
+testUnsecurePasswordErrorMessage(scripts._07_DropdownTest)  Time elapsed: 62.811 sec  <<< FAILURE!
+org.openqa.selenium.NoSuchWindowException: 
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=101.0.4951.67)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LENOVO-7IPRO', ip: '192.168.165.154', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_321'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\mitio\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64043}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 06600a292c154c404675fe51918f93aa
+*** Element info: {Using=id, value=re_error_inner}
+	at scripts._07_DropdownTest.testUnsecurePasswordErrorMessage(_07_DropdownTest.java:68)
+
+teardown(scripts._07_DropdownTest)  Time elapsed: 65.854 sec  <<< FAILURE!
+org.openqa.selenium.NoSuchWindowException: 
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=101.0.4951.67)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LENOVO-7IPRO', ip: '192.168.165.154', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_321'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.67, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\mitio\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64043}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 06600a292c154c404675fe51918f93aa
 

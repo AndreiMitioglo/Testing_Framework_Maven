@@ -18,13 +18,15 @@ import utilities.Driver;
  */
 
 public class _02_TechGlobalTest extends  Base{
-    WebDriver driver;
+   // WebDriver driver;
     //1. Set up driver
 
-    @BeforeMethod
+  /*  @BeforeMethod
     public void setup(){
         driver = Driver.getDriver();
     }
+
+   */
 
     // 2. Validation of test - test
     @Test(priority = 1, description = "TC123: Validate Application form heading")
@@ -41,12 +43,15 @@ public class _02_TechGlobalTest extends  Base{
 
 
     }
+/*
 
     @AfterMethod
     // 3. Teardown actions - after each test
     public void teardown(){
         Driver.quitDriver();
     }
+
+ */
 
 }
 
