@@ -6,10 +6,12 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.asserts.SoftAssert;
 import pages.*;
 
 import utilities.Driver;
 
+import javax.swing.border.SoftBevelBorder;
 import java.util.concurrent.TimeUnit;
 
 public class Base {
@@ -17,6 +19,7 @@ public class Base {
     WebDriver driver;
     WebDriverWait explicitWait;
     Wait fluentWait;
+    SoftAssert softAssert;
     EtsySearchPage etsySearchPage;
     TGApplicationPage tgApplicationPage;
     GoogleSearchPage googleSearchPage;
@@ -41,10 +44,12 @@ public class Base {
         faceBookPage = new FaceBookPage(driver);
         expediaPage = new ExpediaPage(driver);
         ebayTestPage = new EbayTestPage(driver);
+        softAssert= new SoftAssert();
     }
 
     @AfterMethod
     public void teardown(){
         Driver.quitDriver();
     }
+
 }

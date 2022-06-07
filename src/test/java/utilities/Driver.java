@@ -28,7 +28,7 @@ public class Driver {
 
             String browser = "chrome"; // define which browser you will run your test in
 
-            switch (browser){
+            switch (ConfigReader.getProperty("browser")){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -45,7 +45,7 @@ public class Driver {
                     throw new NotFoundException("Browser IS NOT DEFINED properly!!!");
             }
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(Long.parseLong(ConfigReader.getProperty("implicitWait")), TimeUnit.SECONDS);
         }
         return driver;
     }
