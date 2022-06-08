@@ -28,6 +28,8 @@ public class Base {
     FaceBookPage faceBookPage;
     ExpediaPage expediaPage;
     EbayTestPage ebayTestPage;
+    RedIffHomePage redIffHomePage;
+    AmazonTestPage amazonTestPage;
 
 
 
@@ -45,6 +47,8 @@ public class Base {
         expediaPage = new ExpediaPage(driver);
         ebayTestPage = new EbayTestPage(driver);
         softAssert= new SoftAssert();
+        redIffHomePage= new RedIffHomePage(driver);
+        amazonTestPage = new AmazonTestPage(driver);
     }
 
     @AfterMethod

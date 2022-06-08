@@ -12,14 +12,38 @@ public class HeroAppPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//ul/li/a" )
+    @FindBy(xpath = "//ul/li/a")
     public List<WebElement> links;
+
+    @FindBy(css = "#checkboxes>input")
+    public List<WebElement> checkboxes;
 
     @FindBy(xpath = "//ul//button")
     public List<WebElement> alertButtons;
 
     @FindBy(id = "result")
     public WebElement resultParagraph;
+
+    @FindBy(xpath = "//a[text()='iFrame']")
+    public WebElement iFrameLink;
+
+    @FindBy(css = "#tinymce>p")
+    public WebElement contentBox;
+
+    @FindBy(xpath = "//h3")
+    public WebElement iFrameHeading3;
+
+    @FindBy(id = "mce_0_ifr")
+    public WebElement innerIFrame;
+
+    public void clickOnLink(String linkText){
+        for (WebElement link : links) {
+            if(link.getText().equals(linkText)){
+                link.click();
+                break;
+            }
+        }
+    }
 
     public void clickOnAlertButton(String buttonText){
         for(WebElement element: alertButtons){
@@ -29,15 +53,15 @@ public class HeroAppPage {
             }
         }
     }
-    public void clickOnLink(String linkText){
-        for (WebElement link : links) {
-            if (link.getText().equals(linkText)){
-                link.click();
-                break;
-            }
 
-        }
-    }
-    @FindBy(css = "#checkboxes>input")
-    public List<WebElement> checkboxes;
+
 }
+
+
+
+
+
+
+
+
+

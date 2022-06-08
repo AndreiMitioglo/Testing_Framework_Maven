@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import utilities.AlertHandler;
 import utilities.Waiter;
 
-public class _08_Alerts extends Base{
+public class _08_Alerts extends Base {
     /*
     TASK -1
         Go to https://www.etsy.com/
@@ -16,7 +16,7 @@ public class _08_Alerts extends Base{
      */
 
     @Test(priority = 1, description = "TASK-1 - Regular HTML Alert")
-    public void testEtsySignInModal(){
+    public void testEtsySignInModal() {
         driver.get("https://www.etsy.com/");
 
         etsySearchPage.signInButton.click();
@@ -35,7 +35,7 @@ public class _08_Alerts extends Base{
      */
 
     @Test(priority = 2, description = "TASK-2 - Information-Warning alert")
-    public void testInformationWarningAlert(){
+    public void testInformationWarningAlert() {
         driver.get("http://the-internet.herokuapp.com/");
         Waiter.pause(2);
 
@@ -64,7 +64,7 @@ public class _08_Alerts extends Base{
  */
 
     @Test(priority = 3, description = " TASK-3 Confirmation Alert")
-    public void testConfirmationAlert(){
+    public void testConfirmationAlert() {
         driver.get("http://the-internet.herokuapp.com/");
         Waiter.pause(2);
         heroAppPage.clickOnLink("JavaScript Alerts");
@@ -118,7 +118,7 @@ public class _08_Alerts extends Base{
      */
 
     @Test(priority = 4, description = "TASK-4 Prompt Alert")
-    public void testPromptAlert(){
+    public void testPromptAlert() {
         driver.get("http://the-internet.herokuapp.com/");
         Waiter.pause(2);
         heroAppPage.clickOnLink("JavaScript Alerts");
@@ -151,13 +151,26 @@ public class _08_Alerts extends Base{
     Validate the zip code entered displayed in the delivery message
      */
 
+
     @Test(priority = 5, description = "TASK-5 - Amazon Address Modal")
-    public void testAmazonAddressModal(){
+    public void testAmazonAddressModal() {
+        driver.get("https://www.amazon.com/");
+        Waiter.pause(2);
+        amazonTestPage.selectAddressLink.click();
+        Waiter.pause(2);
+        Assert.assertTrue(amazonTestPage.addressModal.isDisplayed());
+        Waiter.pause(2);
+        String zipCode = "60018";
 
+        amazonTestPage.zipCodeInputBox.sendKeys(zipCode);
+        Waiter.pause(2);
+        amazonTestPage.applyButton.click();
+
+        Assert.assertTrue(amazonTestPage.deliveryMessage.getText().contains(zipCode));
+        Waiter.pause(2);
     }
+
 }
-
-
 
 
 
