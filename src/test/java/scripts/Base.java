@@ -30,7 +30,7 @@ public class Base {
     EbayTestPage ebayTestPage;
     RedIffHomePage redIffHomePage;
     AmazonTestPage amazonTestPage;
-
+TGHomePage tgHomePage;
 
 
     @BeforeMethod
@@ -49,6 +49,7 @@ public class Base {
         softAssert= new SoftAssert();
         redIffHomePage= new RedIffHomePage(driver);
         amazonTestPage = new AmazonTestPage(driver);
+        tgHomePage = new TGHomePage(driver);
     }
 
     @AfterMethod
