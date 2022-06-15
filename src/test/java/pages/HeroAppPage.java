@@ -60,6 +60,17 @@ public class HeroAppPage {
     @FindBy(linkText = "myFileAndrei.txt")
     public WebElement downloadFile;
 
+    @FindBy(id = "username")
+    public WebElement username;
+
+    @FindBy(id = "password")
+    public WebElement password;
+
+    @FindBy(css = ".radius")
+    public WebElement loginButton;
+
+
+
 
     public void clickOnLink(String linkText){
         for (WebElement link : links) {

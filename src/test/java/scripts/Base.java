@@ -1,6 +1,8 @@
 package scripts;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,11 +17,13 @@ import javax.swing.border.SoftBevelBorder;
 import java.util.concurrent.TimeUnit;
 
 public class Base {
-
+      // declare
     WebDriver driver;
     WebDriverWait explicitWait;
     Wait fluentWait;
     SoftAssert softAssert;
+    Actions actions;
+    JavascriptExecutor js;
     EtsySearchPage etsySearchPage;
     TGApplicationPage tgApplicationPage;
     GoogleSearchPage googleSearchPage;
@@ -30,9 +34,9 @@ public class Base {
     EbayTestPage ebayTestPage;
     RedIffHomePage redIffHomePage;
     AmazonTestPage amazonTestPage;
-TGHomePage tgHomePage;
+    TGHomePage tgHomePage;
 
-
+    // instantient
     @BeforeMethod
     public void setup(){
         driver = Driver.getDriver();
@@ -47,6 +51,8 @@ TGHomePage tgHomePage;
         expediaPage = new ExpediaPage(driver);
         ebayTestPage = new EbayTestPage(driver);
         softAssert= new SoftAssert();
+        actions= new Actions(driver);
+        js = (JavascriptExecutor) driver;
         redIffHomePage= new RedIffHomePage(driver);
         amazonTestPage = new AmazonTestPage(driver);
         tgHomePage = new TGHomePage(driver);

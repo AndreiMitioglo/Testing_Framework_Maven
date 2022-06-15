@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Waiter;
 
-public class _10_WindowHandles extends Base{
+public class _10_WindowHandles extends Base {
 
     /*
     TEST CASE 1: Validate FaceBook social media icon for TechGlobal School
@@ -14,15 +14,15 @@ public class _10_WindowHandles extends Base{
      */
 
     @Test(priority = 1, description = " TEST CASE 1: Validate FaceBook social media icon for TechGlobal School")
-    public void testTechGlobalSchoolFaceBookIcon(){
+    public void testTechGlobalSchoolFaceBookIcon() {
         driver.get("https://www.techglobalschool.com/");
 
         String tgHomeWindowHandle = driver.getWindowHandle(); // Unique id
         tgHomePage.faceBookIcon.click();
 
         //2 tabs
-        for(String windowHandle : driver.getWindowHandles()){
-            if(!windowHandle.equals(tgHomeWindowHandle)) driver.switchTo().window(windowHandle);
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!windowHandle.equals(tgHomeWindowHandle)) driver.switchTo().window(windowHandle);
         }
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.facebook.com/techglobalschool");
@@ -39,7 +39,7 @@ public class _10_WindowHandles extends Base{
 
      */
     @Test(priority = 2, description = "TEST CASE 2: Multiple Windows")
-    public void testWindowHandle2(){
+    public void testWindowHandle2() {
         driver.get("http://the-internet.herokuapp.com/");
         heroAppPage.clickOnLink("Multiple Windows");
 
@@ -47,8 +47,8 @@ public class _10_WindowHandles extends Base{
 
         heroAppPage.clickHereLink.click();
 
-        for(String windowHandle: driver.getWindowHandles()){
-            if(!windowHandle.equals(mainWindow)) driver.switchTo().window(windowHandle);
+        for (String windowHandle : driver.getWindowHandles()) {
+            if (!windowHandle.equals(mainWindow)) driver.switchTo().window(windowHandle);
         }
 
         Assert.assertEquals(heroAppPage.newWindowH3.getText(), "New Window");

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="/Users/techglobal/IdeaProjects/testng_framework/src/test/java/testng_learning/_06_Parameters.java">
+        <parameter name="username" value="johndoe"/>
+        <parameter name="password" value="abcd1234"/>
+        <classes>
+            <class name="testng_learning._06_Parameters"/>
+        </classes>
+    </test>
+</suite>

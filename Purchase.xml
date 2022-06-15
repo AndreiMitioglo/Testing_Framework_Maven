@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Purchase test">
+    <test verbose="2" preserve-order="true" name= "Purchase">
+          name="C:/Users/mitio/IdeaProjects/teng_framewok/src/test/java/testng_learning">
+        <classes>
+            <class name="testng_learning._05_Groups"/>
+
+        </classes>
+    </test>
+</suite>
